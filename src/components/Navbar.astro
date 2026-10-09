@@ -1,0 +1,54 @@
+---
+// Navbar.astro - Barra de Navegación Reutilizable
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.replace(/\/$/, ""); // normalizar
+---
+
+<nav
+    class="bg-slate-900 text-slate-100 sticky top-0 z-40 border-b border-terracotta-600/30 shadow-md"
+>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="/" class="flex items-center gap-3">
+                <span class="text-2xl text-gold-400">🎭</span>
+                <span class="font-serif font-bold text-lg text-cream"
+                    >Raíces & Arte</span
+                >
+            </a>
+
+            <div class="hidden md:flex space-x-6 text-sm font-medium">
+                <a
+                    href="/"
+                    class={currentPath === ""
+                        ? "text-gold-400 border-b-2 border-gold-400 pb-1"
+                        : "text-slate-300 hover:text-white"}
+                >
+                    Inicio
+                </a>
+                <a
+                    href="/talleres"
+                    class={currentPath === "/talleres"
+                        ? "text-gold-400 border-b-2 border-gold-400 pb-1"
+                        : "text-slate-300 hover:text-white"}
+                >
+                    Talleres
+                </a>
+                <a
+                    href="/nosotros"
+                    class={currentPath === "/nosotros"
+                        ? "text-gold-400 border-b-2 border-gold-400 pb-1"
+                        : "text-slate-300 hover:text-white"}
+                >
+                    Nosotros
+                </a>
+            </div>
+
+            <a
+                href="/talleres"
+                class="bg-terracotta-600 hover:bg-terracotta-700 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-lg transition shadow"
+            >
+                Ver Catálogo
+            </a>
+        </div>
+    </div>
+</nav>

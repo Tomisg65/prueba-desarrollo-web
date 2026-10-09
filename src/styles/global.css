@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+    --color-terracota: #c2593f;
+    --color-crema: #fdfbf7;
+    --color-verde: #4a5d4e;
+    --color-dorado: #d4a359;
+    --font-serif: "Georgia", serif;
+}

@@ -1,0 +1,24 @@
+---
+// CardEquipo.astro - Tarjeta de Integrante del Equipo
+export interface Props {
+    nombre: string;
+    cargo: string;
+    imagen: string;
+}
+
+const { nombre, cargo, imagen } = Astro.props;
+---
+
+<div
+    class="bg-white p-5 rounded-xl border border-slate-200 text-center space-y-3 shadow-sm"
+>
+    <img
+        src={imagen}
+        alt={nombre}
+        class="w-20 h-20 rounded-full mx-auto object-cover border-2 border-terracotta-500"
+    />
+    <div>
+        <h3 class="font-bold text-slate-900 text-base">{nombre}</h3>
+        <p class="text-xs text-terracotta-600 font-medium">{cargo}</p>
+    </div>
+</div>

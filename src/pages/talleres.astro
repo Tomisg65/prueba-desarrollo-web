@@ -1,0 +1,70 @@
+---
+// talleres.astro - Catálogo de Talleres
+import Layout from "../layouts/Layout.astro";
+import CardTaller from "../components/CardTaller.astro";
+import '../styles/global.css';
+
+const listaTalleres = [
+    {
+        titulo: "Pintura & Óleo Tradicional",
+        categoria: "Artes Plásticas",
+        descripcion:
+            "Mezcla de pigmentos, teoría del color y técnicas clásicas de lienzo.",
+        profesor: "Prof. María Inés Morales",
+        horario: "Mar y Jue: 17:00 - 19:00 hrs",
+        cupos: 5,
+        imagen: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=500&q=80",
+    },
+    {
+        titulo: "Cerámica & Escultura",
+        categoria: "Artes Plásticas",
+        descripcion:
+            "Modelado en arcilla, esmaltado y quema artesanal en horno.",
+        profesor: "Prof. Carlos Mendoza",
+        horario: "Miércoles: 15:00 - 18:00 hrs",
+        cupos: 2,
+        imagen: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=500&q=80",
+    },
+    {
+        titulo: "Teatro & Expresión Corporal",
+        categoria: "Artes Escénicas",
+        descripcion:
+            "Taller de voz, desarrollo de la expresión corporal e improvisación.",
+        profesor: "Prof. Elena Rostova",
+        horario: "Sábados: 10:00 - 13:00 hrs",
+        cupos: 8,
+        imagen: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?auto=format&fit=crop&w=500&q=80",
+    },
+    {
+        titulo: "Guitarra Folclórica",
+        categoria: "Música",
+        descripcion:
+            "Rasgueos tradicionales, solfeo básico y ensamble instrumental.",
+        profesor: "Prof. Rodrigo Tapia",
+        horario: "Lunes: 18:00 - 20:00 hrs",
+        cupos: 4,
+        imagen: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=500&q=80",
+    },
+];
+---
+
+<Layout title="Talleres">
+    <div class="max-w-6xl mx-auto px-6 py-12 space-y-8">
+        <div class="text-center max-w-2xl mx-auto space-y-3">
+            <span
+                class="px-3 py-1 bg-terracotta-100 text-terracotta-700 rounded-full text-xs font-bold uppercase"
+                >Formación 2026</span
+            >
+            <h1 class="font-serif text-4xl font-extrabold text-slate-900">
+                Catálogo de Talleres
+            </h1>
+            <p class="text-slate-600 text-sm">
+                Cursos impartidos por profesionales de la cultura.
+            </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {listaTalleres.map((taller) => <CardTaller {...taller} />)}
+        </div>
+    </div>
+</Layout>
